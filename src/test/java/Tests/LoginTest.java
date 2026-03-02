@@ -10,13 +10,10 @@ public class LoginTest extends BaseTest {
     public void loginWithValidDetails(String email, String password) throws InterruptedException {
 
         loginPage.clickLoginButton();
-        Thread.sleep(2000);
         loginPage.enterEmailAddress(email);
         loginPage.enterPassword(password);
-        Thread.sleep(2000);
         loginPage.clickSubmitButton();
-        Thread.sleep(5000);
-        loginPage.isLoginSuccessful();
+        loginPage.enrolledCoursesSection();
     }
 
     @DataProvider(name = "testdata")

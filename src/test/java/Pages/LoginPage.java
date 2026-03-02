@@ -33,7 +33,8 @@ public class LoginPage {
     WebElement loginSubmitButton;
 
     @FindBy(xpath = "//div[contains(text(), \"Enrolled Courses\")]")
-    WebElement dashboardFeature;
+    WebElement enrolledCoursesSection;
+
 
     public void clickLoginButton() {
         wait.until(ExpectedConditions.elementToBeClickable(loginButton)); // Wait until the login button is clickable
@@ -55,9 +56,16 @@ public class LoginPage {
         loginSubmitButton.click();
     }
 
-    public boolean isLoginSuccessful() {
-            wait.until(ExpectedConditions.visibilityOf(dashboardFeature)); // Wait until the dashboard feature is visible
-            return dashboardFeature.isDisplayed();
-
+    public boolean enrolledCoursesSection() {
+        wait.until(ExpectedConditions.visibilityOf(enrolledCoursesSection)); // Wait until the dashboard feature is visible
+        return enrolledCoursesSection.isDisplayed();
     }
+
+
+
+
+
+
+
+
 }

@@ -1,5 +1,6 @@
 package Base;
 
+import Pages.LearnPage;
 import Pages.LoginPage;
 import Utilities.BrowserFactory;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +16,13 @@ BrowserFactory browserFactory = new BrowserFactory(); //creates an object of the
 
     public WebDriver driver;
     public LoginPage loginPage;
+    public LearnPage learnPage;
 
     @BeforeMethod
     public void setUp() {
         driver = browserFactory.startBrowser(browserChoice, url); //Starts the browser and navigates to the URL
         loginPage = new LoginPage(driver); //Initializes the LoginPage object with the WebDriver instance
+        //learnPage = new LearnPage(driver); //Initializes the LearnPage object with the WebDriver instance
     }
 
     @AfterMethod
